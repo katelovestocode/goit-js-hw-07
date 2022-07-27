@@ -23,18 +23,11 @@ function createGalleryMarkup(items) {
 const galleryMarkup = createGalleryMarkup(galleryItems);
 galleryEl.insertAdjacentHTML("beforeend", galleryMarkup);
 
-// ADD EventListener on the click event to the gallery div
-galleryEl.addEventListener("click", onPictureContainerClick);
-
-// Function that is calling SimpleLightbox with captions specified as options
-function onPictureContainerClick(event) {
-  event.preventDefault(); // prevents a user to be redirected to open a picture
-
-  let lightbox = new SimpleLightbox(".gallery a", {
-    captions: true,
-    captionsData: "alt",
-    captionType: "attr",
-    captionPosition: "bottom",
-    captionDelay: 250,
-  });
-}
+// Simple ligthbox Modal Window with captions settings
+let lightbox = new SimpleLightbox(".gallery a", {
+  captions: true,
+  captionsData: "alt",
+  captionType: "attr",
+  captionPosition: "bottom",
+  captionDelay: 250,
+});

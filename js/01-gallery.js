@@ -54,6 +54,10 @@ function onModalClose() {
 function onModalOpen(event) {
   event.preventDefault(); // prevents a user to be redirected to open a picture
 
+  if (event.target.nodeName !== "IMG") {
+    return;
+  }
+
   instance = basicLightbox.create(
     ` <img src = "${event.target.dataset.source}"/>`,
     {
